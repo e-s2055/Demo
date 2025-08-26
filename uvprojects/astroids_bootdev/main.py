@@ -38,6 +38,10 @@ def main():
         for one_asteroid in asteroids:
             if player1.collision(one_asteroid) is True:
                 raise SystemExit (sys.exit("Game Over!"))
+            for bullet in shots:
+                if one_asteroid.collision(bullet) is True:
+                    one_asteroid.kill()
+                    bullet.kill()
         pygame.display.flip()
         dt = clock.tick(60) / 1000
 if __name__ == "__main__":
