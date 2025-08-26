@@ -40,7 +40,7 @@ def main():
                 raise SystemExit (sys.exit("Game Over!"))
             for bullet in shots:
                 if one_asteroid.collision(bullet) is True:
-                    one_asteroid.kill()
+                    one_asteroid.split()
                     bullet.kill()
         pygame.display.flip()
         dt = clock.tick(60) / 1000
